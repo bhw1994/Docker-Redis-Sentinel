@@ -4,15 +4,15 @@ services:
   redis-sentinel1:
     image: boyj-redis-sentinel
     build:
-      context: ..
+      context: .
       dockerfile: Dockerfile
     network_mode: "host"
     environment:
       - REQUIREPASS=password1234
       - MASTERPORT=6379
       - CLIENTPORT=26379
-      - MASTERHOST=192.168.137.101
-      - CLIENTHOST=192.168.137.101
+      - MASTERHOST=127.0.0.1
+      - CLIENTHOST=127.0.0.1
       - QUORUM=2
       - DOWN_AFTER_MILLISEC=5000
       - FAILOVER_TIMEOUT=30000
@@ -20,15 +20,15 @@ services:
   redis-sentinel2:
     image: boyj-redis-sentinel
     build:
-      context: ..
+      context: .
       dockerfile: Dockerfile
     network_mode: "host"
     environment:
       - REQUIREPASS=password1234
       - MASTERPORT=6379
       - CLIENTPORT=26380
-      - MASTERHOST=192.168.137.101
-      - CLIENTHOST=192.168.137.101
+      - MASTERHOST=127.0.0.1
+      - CLIENTHOST=127.0.0.1
       - QUORUM=2
       - DOWN_AFTER_MILLISEC=5000
       - FAILOVER_TIMEOUT=30000
@@ -36,15 +36,15 @@ services:
   redis-sentinel3:
     image: boyj-redis-sentinel
     build:
-      context: ..
+      context: .
       dockerfile: Dockerfile
     network_mode: "host"
     environment:
       - REQUIREPASS=password1234
       - MASTERPORT=6379
       - CLIENTPORT=26381
-      - MASTERHOST=192.168.137.101
-      - CLIENTHOST=192.168.137.101
+      - MASTERHOST=127.0.0.1
+      - CLIENTHOST=127.0.0.1
       - QUORUM=2
       - DOWN_AFTER_MILLISEC=5000
       - FAILOVER_TIMEOUT=30000
